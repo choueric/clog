@@ -311,6 +311,14 @@ func Println(v ...interface{}) {
 	std.Output(2, fmt.Sprintln(v...), CGREEN)
 }
 
+func Error(v ...interface{}) {
+	std.Output(2, fmt.Sprint(v...), CRED)
+}
+
+func Warn(v ...interface{}) {
+	std.Output(2, fmt.Sprint(v...), CYELLOW)
+}
+
 // Fatal is equivalent to Print() followed by a call to os.Exit(1).
 func Fatal(v ...interface{}) {
 	std.Output(2, fmt.Sprint(v...), CRED)
