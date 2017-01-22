@@ -1,6 +1,7 @@
 package clog_test
 
 import (
+	"fmt"
 	"log/syslog"
 	"os"
 	"testing"
@@ -42,7 +43,8 @@ func Test_Syslog(t *testing.T) {
 	// Configure logger to write to the syslog.
 	sl, err := syslog.New(syslog.LOG_NOTICE, "clogTest")
 	if err != nil {
-		t.Error("new syslog:", err)
+		fmt.Println("new syslog:", err)
+		return
 	}
 	logger := clog.New(sl, "prefix:", clog.Lshortfile)
 
